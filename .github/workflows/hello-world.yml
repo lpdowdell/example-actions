@@ -1,7 +1,9 @@
 name: hello world
 
-on: [push]
-
+on:
+  push:
+    branches:
+    - main
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,3 +12,4 @@ jobs:
         run: echo "Hello world, Linda"
       - name: Another task
         run: echo "Anotehr task"
+
