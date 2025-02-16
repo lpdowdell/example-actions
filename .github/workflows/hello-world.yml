@@ -17,4 +17,10 @@ jobs:
         run: echo "Hello world, Linda"
       - name: Another task
         run: echo "Anotehr task"
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
 
+      - name:  List the files of the repository
+        run: |
+          echo "The repository ${{ github.repository }} contains the following files:"
+          tree
