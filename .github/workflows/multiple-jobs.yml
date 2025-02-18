@@ -19,3 +19,9 @@ jobs:
      - name: Print job's name
        run: echo "Job 3"
 
+  job-4:
+    needs: [job-1, job-3]  # after job 1 and job 3
+    runs-on: ubuntu-latest
+    steps:
+     - name: Print job's name
+       run: echo "Job 4"
