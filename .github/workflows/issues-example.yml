@@ -1,0 +1,13 @@
+name: issues example
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  process-issue:
+    runs-on: ubuntu-latest
+      steps:
+        - name: Display the issues's title
+          run: |
+            echo 'The title of the issue is: ${{github.event.issue.title}}"
