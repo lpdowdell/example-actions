@@ -1,0 +1,21 @@
+name: manual trigger
+on:
+  workflow_dispatch:
+    inputs:
+      text:
+        description: Label of a text field
+        required: true
+      build:
+        description: build type
+        type: choice
+        default: release
+        options: [debug, release]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Displaying the inputs
+        run: |
+          echo "Label: ${{ inputs.text }}"
+          echo "Build: ${{ inputs.build}}"
+      
