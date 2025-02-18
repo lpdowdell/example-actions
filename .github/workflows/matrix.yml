@@ -8,9 +8,9 @@ jobs:
       matrix:
         operating_system: [windows-latest, ubuntu-latest, macos-latest]
     name: matrix job
-    runs-on: ${{ matrix.oerating_system }}
+    runs-on: ${{ matrix.operating_system }}
     steps:
-    - name: Print OS
-      run: |
-        echo "We are using the OS: ${{matrix.operating_system}}"
+      - name: Print OS
+        run: |
+          echo "We are using the OS: ${{matrix.operating_system}}"
   
