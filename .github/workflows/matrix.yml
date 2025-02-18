@@ -1,0 +1,17 @@
+name: matrix example
+on:
+  workflow_dispatch:  # to execute manually
+jobs:
+  build:
+    strategy:
+      fail-fast: false  # if one job fails, others continue execution
+      matrix:
+        operating_system: [windows-latest, ubuntu-latest, macos-latest]
+    name: matrix job
+    runs-on: ${{ matrix.oerating_system }}
+    steps:
+    - name: Print OS
+      run: |
+        echo "We are using the OS: ${{matrix.operating_system}}"
+      
+
