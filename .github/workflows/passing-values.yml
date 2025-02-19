@@ -12,5 +12,5 @@ jobs:
         run: echo "MY_VALUE=Linda" >> "$GITHUB_OUTPUT"
     # I can access the value in this step
       - name: Getting a variable
-        run: echo "${{ steps.generate-value.outputs.MY_VALUE }}
+        run: echo "${{ steps.generate-value.outputs.MY_VALUE }}"
        
