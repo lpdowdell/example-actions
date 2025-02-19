@@ -1,0 +1,14 @@
+name: Workflow Commands
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-lastest
+    steps:
+      - name: Display warning and error
+        run: |
+          echo "::warning::Warning message"    # this is an example of a workflow command to display a warning.
+          echo "::error::Error message"
+          
+          
+      
