@@ -13,4 +13,13 @@ jobs:
     # I can access the value in this step
       - name: Getting a variable
         run: echo "${{ steps.generate-value.outputs.MY_VALUE }}"
-       
+
+      - name: Masking a value
+        id: masker
+        run: |
+         secret_value=Thomas
+         echo "::add-mark::$"secret_value"
+         echo "SECRET_VALUE=$secret_value" >> "$GITHUB_OUTPUT"
+          
+      - name: Use secret value
+        run: echo "the secret value is ${{ steps.masker.outputs.SECRET_VALUE}}"
