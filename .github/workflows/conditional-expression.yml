@@ -1,0 +1,17 @@
+name: Conditional expression
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        operating_system: [windows-latest, ubuntu-latest, macos-latest]
+    runs-on: ${{matrix.operating_system}}
+    steps:
+      - name: Only for Windows
+        if: ${{matrix.operating_system == 'windows-latest'}}
+        run: echo "This command is executed only on Windows"
+      - name: Other Operating Systems
+        run: echo "This command is executed for other operating systems"
+      
