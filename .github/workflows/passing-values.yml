@@ -1,0 +1,16 @@
+name:  Passing values between steps
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on:  ubuntu-latest
+    steps: # this step produces a value (my value equals to Linda)
+    # and places it in an a github oject
+      - name: Write a variable
+        id: generate-value
+        run: echo "MY_VALUE=Linda" >> "$GITHUB_OUTPUT"
+    # I can access the value in this step
+      - name: Getting a variable
+        run: echo "${{steps.generate-value.outputs.MY_VALUE}}
+       
