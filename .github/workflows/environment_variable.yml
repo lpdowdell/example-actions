@@ -12,7 +12,7 @@ jobs:
         # which is in the working director
 
       - name: configure environment variable
-        run: echo "MY-VARIABLE=hello, world, github actions' >> $GITHUB_ENV
+        run: echo "MY-VARIABLE=hello, world, github actions" >> $GITHUB_ENV
         # I am creating an environment variable directly from the workflow
         
       - name: execute the JS file
