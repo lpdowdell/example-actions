@@ -1,0 +1,21 @@
+name: environment variable
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: getting the code
+      # will do a checkout here and copy the uses line
+        uses: actions/checkout@v4.2.2 
+        # with this checkout I am getting the code from the node main.js below
+        # which is in the working director
+
+      - name: configure environment variable
+        run: echo "MY-VARIABLE=hello, world, github actions' >> $GITHUB_ENV
+        # I am creating an environment variable directly from the workflow
+        
+      - name: execute the JS file
+        run: node main.js # this is in the directory.  
+      
+      
