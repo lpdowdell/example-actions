@@ -18,7 +18,7 @@ jobs:
         id: masker
         run: |
          secret_value=Thomas
-         echo "::add-mark::$secret_value"
+         echo "::add-mask::$secret_value"
          echo "SECRET_VALUE=$secret_value" >> "$GITHUB_OUTPUT"
           
       - name: Use secret value
